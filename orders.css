@@ -18,37 +18,69 @@ body {
     font-style: normal;
   }
 
+  .ephesis {
+    font-family: "Ephesis", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 .sidebar {
     width: 200px;
     background: #FBD4DB;
     color: rgb(0, 0, 0);
     padding: 15px;
-    height: auto;
+    height: 100vh;
 }
 .sidebar h2{
     display: flex;
     justify-content: center;
-    font-family: 'birthstone';
-    font-size: 50px;
+    font-family: 'ephesis';
+    font-size: 45px;
     font-weight: 400;
 }
 .sidebar a {
     color: rgb(0, 0, 0);
     text-decoration: none;
     display: block;
-    padding: 10px;
+    padding: 15px;
     font-family: 'albert sans';
-    transition: background-color 0.5s;
+    transition: color 0.5s;
 }
+
+.sidebar i{
+    padding-right: 5px;
+}
+.sidebar a::after{
+    content: ""; 
+    display: block; /* Make it a block element */
+    height: 1px; 
+    background-color: #838082; 
+    width: 95%; /* Set the width of the line */
+    margin: 10px auto 0; 
+}
+
 .sidebar a:hover {
-    background: #ffffff;
-    
+    color: #092b74;
+
 }
 .main-content {
     flex: 1;
-    padding: 20px;
+    padding: 10px;
 }
+
+.card2{
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family:'albert sans';
+}
+
+.card2 h2{
+    text-indent: 10px;
+
+}
+
 .card {
     background: white;
     border-radius: 5px;
@@ -79,32 +111,6 @@ th {
 .order-history {
     background-color: white;
     border-radius: 10px;
-    margin: 10px;
-    padding: 20px; /* Add padding for better spacing inside the container */
-    overflow: auto; /* Ensure content is scrollable if it overflows */
-}
 
-table {
-    width: 100%; /* Make the table take the full width of its container */
-    border-collapse: collapse; /* Collapse borders for a cleaner look */
-    margin: 10px 0; /* Add margin for spacing */
-}
-
-th, td {
-    padding: 10px; /* Add padding for better spacing inside cells */
-    text-align: left; /* Align text to the left */
-    border: 1px solid #ddd; /* Add a light border for separation */
-}
-
-th {
-    background-color: #f2f2f2; /* Light background for header */
-    font-weight: bold; /* Make header text bold */
-}
-
-.order-history {
-    background-color: white;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px; /* Add padding for better spacing inside the container */
     overflow: auto; /* Ensure content is scrollable if it overflows */
 }

@@ -1,120 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- UI Responsive -->
-
-    <!--Google Font-->
-    <!--Birthstone-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleur Haven</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Birthstone&family=Ephesis&display=swap" rel="stylesheet">
+    
+    
 
-
-     <!--Albert Sans Font-->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,home" />
-
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link rel="stylesheet" href="account.css"/> 
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-    <nav class="navbar"> <!-- Navigation Bar -->
-        <div class="navdiv">
-            <div class="title"> <a href="#">Fleur</a> </div> <!-- Title -->
-           
-        
-            <ul> 
-                <li>
-                    <a href="welcome-page.html">HOME</a>
-                </li>
-                <li>
-                    <a href="main.html">SHOP</a>
-                </li>
-                <li>
-                    <a href="#">
-                        CART
-                    </a>
-                </li>
-                <li>
-                    <a href="account.html">
-                        ACCOUNT
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </nav>
-    <main>
-        
-        <div class="page">
-        <div class="container">
+
+
+<div class="sidebar">
+    <h2>Fleur Haven</h2>
+    <a href="home.html"><i class="fa-solid fa-house"></i> Home </a>
+    <a href="orders.html"><i class="fa-solid fa-truck"></i> Orders</a>
+    <a href="#"><i class="fas fa-cog"></i> Account</a>
+</div>
+
+<div class="main-content">
+
+
+        <div class="card2">
             <h2>Account Information</h2>
-            <div class="account-info">
-              
-                    <div class="account-info-form">
-                        <div class="personal-profile">
-                           <span class="material-symbols-outlined">account_circle</span><h3 class="edit"> Personal Profile <a href="#">EDIT</a></h3>
-                           
-                            <p> Magbutay, Jennica Mae S.</p>
-                            <p> jesi.magbutay.up@phinmaed.com</p>
-                        </div>
-                        <div class="address">
-                            <span class="material-symbols-outlined">home</span><h3 class="edit"> Address <a href="#"> EDIT</a></h3>
-                            <p> 9 Santiago Street, Sta. Barbara, Pangasinan</p>
-                        </div>
-                    </div>
             </div>
-        </div>
+
+            <div class="card-container"> <!-- New container for cards -->
+                <div class="card">
+                    <div class="account-info">
+                        <div class="container"> 
+                            <h2>Personal Information</h2>
+                            <a href="#" onclick="editAccount()" ><i class="fa-solid fa-pen"></i>Edit</a>
+                        </div>
+                        <p><strong>Username:</strong> jdoe123</p>
+                        <p><strong>Email:</strong> jdoe@example.com</p>
+                        <p><strong>Phone Number:</strong> (123) 456-7890</p>
+                    </div>
+                    
+                </div>
+        
+                <div class="card">
+                    <div class="account-info">
+                        <div class="container"> 
+                            <h2>Address</h2>
+                            <a href="#" onclick="editAccount()" ><i class="fa-solid fa-pen"></i>Edit</a>
+                        </div>
+                        <p><strong>Street:</strong> 123 Main St</p>
+                        <p><strong>City:</strong> Springfield</p>
+                        <p><strong>State:</strong> IL</p>
+                        <p><strong>Zip Code:</strong> 62701</p>
+                    </div>  
+                   
+                </div>
+            </div>
+            <script>
+                function editAccount() {
+                    alert("Edit account functionality goes here.");
+                }
+            </script>
         
 
-        <div class="container">
-            <div class="order-history">
-                <h2>Order History</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#1001</td>
-                            <td>2023-10-01</td>
-                            <td>Shipped</td>
-                            <td>$59.99</td>
-                        </tr>
-                        <tr>
-                            <td>#1002</td>
-                            <td>2023-09-15</td>
-                            <td>Delivered</td>
-                            <td>$29.99</td>
-                        </tr>
-                        <tr>
-                            <td>#1003</td>
-                            <td>2023-08-20</td>
-                            <td>Pending</td>
-                            <td>$89.99</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    </main>
-    <footer>
-        <!-- Place footer here -->
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
 </body>
 </html>

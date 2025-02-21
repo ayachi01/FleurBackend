@@ -1,100 +1,104 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f3f3f3;
+}
+
 .birthstone-regular {
     font-family: "Birthstone", serif;
     font-weight: 400;
     font-style: normal;
-}
+  }
 
-.kaisei-harunoumi-regular {
-    font-family: "Kaisei HarunoUmi", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.albert-sans {
+  .albert-sans {
     font-family: "Albert Sans", serif;
     font-optical-sizing: auto;
     font-style: normal;
-}
+  }
 
-* {
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-}
+  .ephesis {
+    font-family: "Ephesis", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 
-.navbar {
-    background-color: #fdfdfd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    opacity: 100%;
-}
 
-.navdiv {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-li {
-    list-style: none;
-    display: inline-block;
-}
-
-li a {
-    font-family: 'albert sans';
+.sidebar {
+    width: 200px;
+    background: #FBD4DB;
     color: rgb(0, 0, 0);
-    font-size: 20px;
-    margin-right: 35px;
-    font-weight: 300;
-}
-
-.title a {
-    font-family: 'Birthstone';
-    font-size: 55px;
-    font-weight: 250;
-    color: #573F53;
-    margin-left: 100px;
-}
-
-body {
-    background-color: #fafafa;
-    margin: 0 auto;
-}
-
-.page { 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    padding: 15px;
     height: 100vh;
-    align-items: center;
 }
-
-.container {
+.sidebar h2{
+    display: flex;
+    justify-content: center;
+    font-family: 'ephesis';
+    font-size: 45px;
+    font-weight: 400;
+}
+.sidebar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    padding: 15px;
     font-family: 'albert sans';
-    max-width: 1200px;
-    width: 1000vh;
-    background: #fff;
-    margin: 20px; /* Add margin to create space between containers */
-    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
+    transition: color 0.5s;
 }
-
-
-h2 {
-    font-weight: 500;
-    margin: 30px; /* You can keep this margin */
-    display: block; /* Change to block to allow ::after to position correctly */
+.sidebar i{
+    padding-right: 5px;
 }
-
-h2::after {
+.sidebar a::after{
     content: ""; 
     display: block; /* Make it a block element */
     height: 1px; 
     background-color: #838082; 
-    width: 100%; /* Set the width of the line */
-    margin: 10px auto 0; /* Center the line and add space above it */
+    width: 95%; /* Set the width of the line */
+    margin: 10px auto 0; 
 }
+.sidebar a:hover {
+    color: #092b74;
+
+}
+.main-content {
+    flex: 1;
+    padding: 10px;
+}
+.card {
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-family:'albert sans';
+    font-weight: 300;
+}
+
+.card h2{
+    font-weight: 400;
+}
+
+.card2{
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family:'albert sans';
+}
+
+.card2 h2{
+    text-indent: 10px;
+
+}
+
+
+
+
+
+
 
 .account-info {
     padding: 20px; /* Add padding for better spacing inside the container */
@@ -103,99 +107,62 @@ h2::after {
 }
 
 
-.account-info-form {
-    display: flex;
-    flex-direction: column; /* Change to column layout for better alignment */
-    align-items: flex-start; /* Align items to the start */
-    justify-content: flex-start; /* Align items to the start */
-    text-align: left;
-    margin-top: 10px;
-    padding: 10px;
-    width: 100%; /* Ensure it takes full width */
-}
-
-.account-info-form label {
-    font-weight: 400; /* Style for labels */
-    margin-bottom: 5px; /* Space between label and input */
-}
-
-.account-info-form input, 
-.account-info-form select {
-    width: 100%; /* Make inputs and selects take full width */
-    padding: 10px; /* Add padding for better spacing */
-    margin-bottom: 15px; /* Space between inputs */
-    border: 1px solid #ddd; /* Light border for inputs */
-    border-radius: 5px; /* Rounded corners for inputs */
-}
-
-.edit {
-    font-weight: 400;
-    display: inline-block;
+h1 {
     text-align: center;
-    margin-top: 10px; /* Add margin for spacing */
-    text-indent: 10px;
+    margin-bottom: 20px;
 }
 
-.edit a {
-    font-size: 10px;
-    display: inline-block;
-    color: #007BFF; /* Optional: Change link color */
-    text-decoration: underline; /* Optional: Underline links */
-}
 
 p {
     font-weight: 300;
     margin-top: 10px; /* Add margin for spacing */
-    text-indent: 35px;
 }
 
 
-table {
-    width: 100%; /* Make the table take the full width of its container */
-    border-collapse: collapse; /* Collapse borders for a cleaner look */
-    margin: 10px 0; /* Add margin for spacing */
+.card-container {
+    display: flex; /* Use flexbox to arrange cards side by side */
+    gap: 20px; /* Space between cards */
 }
 
-th, td {
-    padding: 10px; /* Add padding for better spacing inside cells */
-    text-align: left; /* Align text to the left */
-    border: 1px solid #ddd; /* Add a light border for separation */
+.card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1; /* Allow cards to grow equally */
 }
 
-th {
-    background-color: #f2f2f2; /* Light background for header */
-    font-weight: bold; /* Make header text bold */
+.account-info {
+    margin-bottom: 15px;
 }
 
-.order-history {
-    background-color: white;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px; /* Add padding for better spacing inside the container */
-    overflow: auto; /* Ensure content is scrollable if it overflows */
+.account-info a{
+    display: flex;
+    justify-content: flex-end;
 }
 
-table {
-    width: 100%; /* Make the table take the full width of its container */
-    border-collapse: collapse; /* Collapse borders for a cleaner look */
-    margin: 10px 0; /* Add margin for spacing */
+.container {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding-top: 10px; 
+
 }
 
-th, td {
-    padding: 10px; /* Add padding for better spacing inside cells */
-    text-align: left; /* Align text to the left */
-    border: 1px solid #ddd; /* Add a light border for separation */
+
+.container h2, .container a {
+    margin: 0; 
+    height: 40px; 
+    display: flex; 
+    align-items: center; 
 }
 
-th {
-    background-color: #f2f2f2; /* Light background for header */
-    font-weight: bold; /* Make header text bold */
+.container a {
+    text-decoration: none; 
+    color: #007BFF; 
+    transition: color 0.3s; 
 }
 
-.order-history {
-    background-color: white;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px; /* Add padding for better spacing inside the container */
-    overflow: auto; /* Ensure content is scrollable if it overflows */
+.container a:hover {
+    color: #0056b3; 
 }

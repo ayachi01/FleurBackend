@@ -17,27 +17,33 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
   }
-
+  .ephesis {
+    font-family: "Ephesis", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 .sidebar {
     width: 200px;
     background: #FBD4DB;
     color: rgb(0, 0, 0);
     padding: 15px;
-    height: auto;
+    height: 100vh;
 }
 .sidebar h2{
     display: flex;
     justify-content: center;
-    font-family: 'birthstone';
-    font-size: 50px;
-    font-weight: 400;
+    font-family: 'ephesis';
+    font-size: 45px;
+    font-weight: 500;
+    color: #000000;
 }
+
 .sidebar a {
     color: rgb(0, 0, 0);
     text-decoration: none;
     display: block;
-    padding: 10px;
+    padding: 15px;
     font-family: 'albert sans';
     transition: color 0.5s;
 }
@@ -88,7 +94,7 @@ body {
 
 .card2 h2 .home{
     font-size: 20px;
-    color: #081d4b;
+    color: #573F53;
 }
 
 
