@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f3f3f3;
+}
+
+.birthstone-regular {
+    font-family: "Birthstone", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .albert-sans {
+    font-family: "Albert Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+
+.sidebar {
+    width: 200px;
+    background: #FBD4DB;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    height: auto;
+}
+.sidebar h2{
+    display: flex;
+    justify-content: center;
+    font-family: 'birthstone';
+    font-size: 50px;
+    font-weight: 400;
+}
+.sidebar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-family: 'albert sans';
+    transition: color 0.5s;
+}
+.sidebar i{
+    padding-right: 5px;
+}
+.sidebar a::after{
+    content: ""; 
+    display: block; /* Make it a block element */
+    height: 1px; 
+    background-color: #838082; 
+    width: 95%; /* Set the width of the line */
+    margin: 10px auto 0; 
+}
+.sidebar a:hover {
+    color: #092b74;
+
+}
+.main-content {
+    flex: 1;
+    padding: 10px;
+}
+.card {
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-family:'albert sans';
+    font-weight: 300;
+}
+
+.card h2{
+    font-weight: 400;
+}
+
+.card2{
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family:'albert sans';
+}
+
+.card2 h2{
+    text-indent: 10px;
+
+}
+
+.card2 h2 .home{
+    font-size: 20px;
+    color: #081d4b;
+}
+
+
+canvas {
+    width: 100% !important; /* Make the canvas responsive */
+    height: auto !important; /* Maintain aspect ratio */
+}

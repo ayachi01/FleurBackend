@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f3f3f3;
+}
+
+.birthstone-regular {
+    font-family: "Birthstone", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .albert-sans {
+    font-family: "Albert Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+
+.sidebar {
+    width: 200px;
+    background: #FBD4DB;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    height: auto;
+}
+.sidebar h2{
+    display: flex;
+    justify-content: center;
+    font-family: 'birthstone';
+    font-size: 50px;
+    font-weight: 400;
+}
+.sidebar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-family: 'albert sans';
+    transition: background-color 0.5s;
+}
+.sidebar a:hover {
+    background: #ffffff;
+    
+}
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+.card {
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+table {
+    width: 100%; /* Make the table take the full width of its container */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    margin: 10px 0; /* Add margin for spacing */
+}
+
+th, td {
+    padding: 10px; /* Add padding for better spacing inside cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Add a light border for separation */
+}
+
+th {
+    background-color: #f2f2f2; /* Light background for header */
+    font-weight: bold; /* Make header text bold */
+}
+
+.order-history {
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px; /* Add padding for better spacing inside the container */
+    overflow: auto; /* Ensure content is scrollable if it overflows */
+}
+
+table {
+    width: 100%; /* Make the table take the full width of its container */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    margin: 10px 0; /* Add margin for spacing */
+}
+
+th, td {
+    padding: 10px; /* Add padding for better spacing inside cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Add a light border for separation */
+}
+
+th {
+    background-color: #f2f2f2; /* Light background for header */
+    font-weight: bold; /* Make header text bold */
+}
+
+.order-history {
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px; /* Add padding for better spacing inside the container */
+    overflow: auto; /* Ensure content is scrollable if it overflows */
+}
