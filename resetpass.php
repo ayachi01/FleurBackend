@@ -1,7 +1,7 @@
 <?php
 session_start();
 $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
-unset($_SESSION['error']); // Clear error message after displaying it
+unset($_SESSION['error']);
 ?>
 
 <!DOCTYPE html>
