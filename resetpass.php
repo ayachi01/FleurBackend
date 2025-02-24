@@ -9,33 +9,33 @@ unset($_SESSION['error']); // Clear error message after displaying it
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Reset Password</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 
 <body>
     <div class="page">
         <div class="container">
             <div class="signup-content">
-                <img src="assets/fleur haven.png" alt="Login Image" class="signup-image">
-                <form method="POST" action="../FleurBackend/api/index_api.php" class="formLogin">
-                    <h1> Welcome</h1>
+                <img src="assets/fleur haven.png" alt="Logo" class="signup-image">
+                <form method="POST" action="../FleurBackend/api/reset_pass.php" class="formLogin">
+                    <h1>Reset Password</h1>
+
                     <?php if ($error): ?>
                         <div class="error"><?php echo htmlspecialchars($error); ?></div>
-                    <?php endif; ?> 
+                    <?php endif; ?>
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="email@example.com" name="email" required >
+                    <!-- Hidden Token (Comes from URL) -->
+                    <input type="hidden" name="token" value="<?php echo isset($_GET['token']) ? htmlspecialchars($_GET['token']) : ''; ?>">
 
-                    <label for="password">Password</label>
+                    <label for="new_password">New Password</label>
                     <div class="password-container">
-                        <input type="password" id="password" name="password" placeholder="Password123" required>
+                        <input type="password" id="new_password" name="new_password" required>
                     </div>
 
-                    <button type="submit" class="submit-btn" >Sign In</button>   
-                    <a href="forgotpass.php">Forgot Password </a>
+                    <button type="submit" class="submit-btn">Update</button>   
+                    <a href="index.php">Sign in</a>
                 </form>
             </div>
         </div>

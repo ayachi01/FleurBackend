@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         die("Database connection error: " . mysqli_connect_error());
     }
 
-    $stmt = $connection->prepare("SELECT password FROM users WHERE email = ?");
+    $stmt = $connection->prepare("SELECT password FROM administrators WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
