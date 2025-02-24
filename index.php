@@ -20,11 +20,11 @@ unset($_SESSION['error']); // Clear error message after displaying it
         <div class="container">
             <div class="signup-content">
                 <img src="assets/fleur haven.png" alt="Login Image" class="signup-image">
-                <form method="POST" action="../FleurHaven/api/index_api.php" class="formLogin">
+                <form method="POST" action="../FleurBackend/api/index_api.php" class="formLogin">
                     <h1> Welcome</h1>
                     <?php if ($error): ?>
                         <div class="error"><?php echo htmlspecialchars($error); ?></div>
-                    <?php endif; ?>
+                    <?php endif; ?> 
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
@@ -34,7 +34,7 @@ unset($_SESSION['error']); // Clear error message after displaying it
                         <input type="password" id="password" name="password" required>
                     </div>
 
-                    <button type="submit" class="submit-btn">Sign In</button>   
+                    <button type="submit" class="submit-btn" >Sign In</button>   
                     <a href="forgotpass.php">Forgot Password </a>
                 </form>
             </div>
