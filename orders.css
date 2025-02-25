@@ -42,7 +42,7 @@ body {
     color: rgb(0, 0, 0);
     text-decoration: none;
     display: block;
-    padding: 15px;
+    padding: 20px;
     font-family: 'albert sans';
     transition: color 0.5s;
 }
@@ -95,6 +95,7 @@ table {
     width: 100%; /* Make the table take the full width of its container */
     border-collapse: collapse; /* Collapse borders for a cleaner look */
     margin: 10px 0; /* Add margin for spacing */
+    
 }
 
 th, td {
@@ -104,10 +105,13 @@ th, td {
 }
 
 th {
+    transition: color 0.5 ease;
     background-color: #f2f2f2; /* Light background for header */
     font-weight: bold; /* Make header text bold */
 }
-
+th:hover{
+    color: #092b74;
+}
 .order-history {
     background-color: white;
     border-radius: 10px;
