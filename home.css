@@ -25,7 +25,7 @@ body {
 
 .sidebar {
     width: 200px;
-    background: #FBD4DB;
+    background: #fbd4db73;
     color: rgb(0, 0, 0);
     padding: 15px;
     height: 100vh;
@@ -33,10 +33,10 @@ body {
 .sidebar h2{
     display: flex;
     justify-content: center;
-    font-family: 'ephesis';
-    font-size: 45px;
+    font-family: 'birthstone';
+    font-size: 55px;
     font-weight: 500;
-    color: #000000;
+    color: #573F53;
 }
 
 .sidebar a {
@@ -45,21 +45,17 @@ body {
     display: block;
     padding: 20px;
     font-family: 'albert sans';
-    transition: color 0.5s;
+    transition: background-color 0.5s;
 }
 .sidebar i{
     padding-right: 5px;
 }
-.sidebar a::after{
-    content: ""; 
-    display: block; /* Make it a block element */
-    height: 1px; 
-    background-color: #838082; 
-    width: 95%; /* Set the width of the line */
-    margin: 10px auto 0; 
-}
+
 .sidebar a:hover {
-    color: #092b74;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 500;
 
 }
 .main-content {
@@ -73,6 +69,7 @@ body {
     margin-bottom: 20px;
     font-family:'albert sans';
     font-weight: 300;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
 
 .card h2{
@@ -85,6 +82,7 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     font-family:'albert sans';
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
 
 .card2 h2{
@@ -101,4 +99,35 @@ body {
 canvas {
     width: 100% !important; /* Make the canvas responsive */
     height: auto !important; /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+}
+
+#myChart {
+    max-width: 1000px; /* Set a maximum width */
+    height: 300px; /* Set a fixed height */
+    margin: auto; /* Center the chart */
+}
+
+.total-boxes {
+    display: flex; /* Use flexbox to align items side by side */
+    justify-content: space-between; /* Space between the boxes */
+    margin-bottom: 20px; /* Space below the boxes */
+}
+
+.total-sales, .total-users {
+    background-color: #ffffff; /* Changed to white for better visibility */
+    padding: 25px; /* Increased padding for a larger box */
+    border-radius: 8px;
+    text-align: center;
+    font-size: 30px; /* Increased font size for better visibility */
+    flex: 1; /* Allow boxes to grow equally */
+    margin-right: 10px; /* Space between boxes */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+}
+
+.total-users {
+    margin-right: 0; /* Remove margin for the last box */
 }

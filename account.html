@@ -9,63 +9,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Birthstone&family=Ephesis&display=swap" rel="stylesheet">
     
-    
-
     <link rel="stylesheet" href="account.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+  
+    </style>
 </head>
 <body>
-
 
 <div class="sidebar">
     <h2>Fleur Haven</h2>
     <a href="home.html"><i class="fa-solid fa-house"></i> Home </a>
     <a href="orders.html"><i class="fa-solid fa-truck"></i> Orders</a>
     <a href="#"><i class="fa-solid fa-user"></i> Account</a>
-    <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a>
 </div>
 
 <div class="main-content">
+    <div class="card2">
+        <h2>Account Settings</h2>
+    </div>
 
-
-        <div class="card2">
-            <h2>Account Information</h2>
-            </div>
-
-            <div class="card-container"> <!-- New container for cards -->
-                <div class="card">
-                    <div class="account-info">
-                        <div class="container"> 
-                            <h2>Personal Information</h2>
-                            <a href="#" onclick="editAccount()" ><i class="fa-solid fa-pen"></i>Edit</a>
-                        </div>
-                        <p><strong>Username:</strong> jdoe123</p>
-                        <p><strong>Email:</strong> jdoe@example.com</p>
-                        <p><strong>Phone Number:</strong> (123) 456-7890</p>
+    <div class="card-container"> <!-- New container for cards -->
+        <div class="card">
+            <div class="account-info">
+                <div class="container"> 
+                    <div class="img"> 
+                        <img src="assets/user.png" alt="Profile Picture">
                     </div>
-                    
-                </div>
-        
-                <div class="card">
-                    <div class="account-info">
-                        <div class="container"> 
-                            <h2>Address</h2>
-                            <a href="#" onclick="editAccount()" ><i class="fa-solid fa-pen"></i>Edit</a>
-                        </div>
-                        <p><strong>Street:</strong> 123 Main St</p>
-                        <p><strong>City:</strong> Springfield</p>
-                        <p><strong>State:</strong> IL</p>
-                        <p><strong>Zip Code:</strong> 62701</p>
-                    </div>  
-                   
+                    <div>
+                        <h2>Personal Information</h2>
+                        <p> jdoe123</p>
+                        <p> jdoe@example.com</p>
+                        <p> (123) 456-7890</p>
+                        <button class="edit"><i class="fa-solid fa-pen"></i>Edit</button>
+                    </div>
                 </div>
             </div>
-            <script>
-                function editAccount() {
-                    alert("Edit account functionality goes here.");
-                }
-            </script>
-        
+        </div>
+    
+    </div>
+
+    <!-- Log Out Button -->
+    <button class="logout-button" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+
+    <script>
+        function editAccount() {
+            alert("Edit account functionality goes here.");
+        }
+
+        function logout() {
+            // Simulate logout action
+            alert("You have been logged out.");
+            // Redirect to the login page or home page
+            window.location.href = "login.html"; // Change this to your actual login page
+        }
+    </script>
+</div>
 
 </body>
 </html>

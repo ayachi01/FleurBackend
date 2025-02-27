@@ -29,7 +29,7 @@ body {
 
 .sidebar {
     width: 200px;
-    background: #FBD4DB;
+    background: #fbd4db73;
     color: rgb(0, 0, 0);
     padding: 15px;
     height: 100vh;
@@ -37,9 +37,10 @@ body {
 .sidebar h2{
     display: flex;
     justify-content: center;
-    font-family: 'ephesis';
-    font-size: 45px;
+    font-family: 'birthstone';
+    font-size: 55px;
     font-weight: 400;
+    color: #573F53;
 }
 .sidebar a {
     color: rgb(0, 0, 0);
@@ -47,21 +48,17 @@ body {
     display: block;
     padding: 20px;
     font-family: 'albert sans';
-    transition: color 0.5s;
+    transition: background-color 0.5s;
 }
 .sidebar i{
     padding-right: 5px;
 }
-.sidebar a::after{
-    content: ""; 
-    display: block; /* Make it a block element */
-    height: 1px; 
-    background-color: #838082; 
-    width: 95%; /* Set the width of the line */
-    margin: 10px auto 0; 
-}
+
 .sidebar a:hover {
-    color: #092b74;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 500;
 
 }
 .main-content {
@@ -87,6 +84,7 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     font-family:'albert sans';
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
 
 .card2 h2{
@@ -97,7 +95,11 @@ body {
 
 
 
-
+.img{
+    margin-right: 50px; /* Space between image and form */
+    max-width: 300px; /* Adjust the size of the image */
+    height: auto; /* Maintain aspect ratio */
+}
 
 
 .account-info {
@@ -129,7 +131,8 @@ p {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    flex: 1; /* Allow cards to grow equally */
+    width: 600px;
+    
 }
 
 .account-info {
@@ -144,7 +147,6 @@ p {
 .container {
     display: flex; 
     align-items: center; 
-    justify-content: space-between; 
     padding-top: 10px; 
 
 }
@@ -157,12 +159,34 @@ p {
     align-items: center; 
 }
 
-.container a {
-    text-decoration: none; 
-    color: #007BFF; 
-    transition: color 0.3s; 
+
+.logout-button {
+    background-color: #f44336; /* Red background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline */
+    font-size: 16px; /* Increase font size */
+    margin: 20px 0; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 4px; /* Rounded corners */
 }
 
-.container a:hover {
-    color: #0056b3; 
+.logout-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+.edit{
+    background-color: #f44336; /* Red background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline */
+    font-size: 16px; /* Increase font size */
+    margin: 20px 0; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 4px; /* Rounded corners */
 }

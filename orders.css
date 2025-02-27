@@ -26,7 +26,7 @@ body {
 
 .sidebar {
     width: 200px;
-    background: #FBD4DB;
+    background: #fbd4db73;
     color: rgb(0, 0, 0);
     padding: 15px;
     height: 100vh;
@@ -34,9 +34,10 @@ body {
 .sidebar h2{
     display: flex;
     justify-content: center;
-    font-family: 'ephesis';
-    font-size: 45px;
+    font-family: 'birthstone';
+    font-size: 55px;
     font-weight: 400;
+    color: #573F53;
 }
 .sidebar a {
     color: rgb(0, 0, 0);
@@ -44,23 +45,17 @@ body {
     display: block;
     padding: 20px;
     font-family: 'albert sans';
-    transition: color 0.5s;
+    transition: background-color 0.5s;
 }
 
 .sidebar i{
     padding-right: 5px;
 }
-.sidebar a::after{
-    content: ""; 
-    display: block; /* Make it a block element */
-    height: 1px; 
-    background-color: #838082; 
-    width: 95%; /* Set the width of the line */
-    margin: 10px auto 0; 
-}
-
 .sidebar a:hover {
-    color: #092b74;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 500;
 
 }
 .main-content {
@@ -74,6 +69,7 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     font-family:'albert sans';
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
 
 .card2 h2{
@@ -86,6 +82,7 @@ body {
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
 
 
