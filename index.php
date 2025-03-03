@@ -27,11 +27,11 @@ unset($_SESSION['error']); // Clear error message after displaying it
                     <?php endif; ?> 
 
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" placeholder="email@example.com" name="email" required >
 
                     <label for="password">Password</label>
                     <div class="password-container">
-                        <input type="password" id="password" name="password" required>
+                        <input type="password" id="password" name="password" placeholder="Password123" required>
                     </div>
 
                     <button type="submit" class="submit-btn" >Sign In</button>   
