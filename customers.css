@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f3f3f3;
+}
+
+.birthstone-regular {
+    font-family: "Birthstone", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .albert-sans {
+    font-family: "Albert Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  .ephesis {
+    font-family: "Ephesis", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.sidebar {
+    width: 200px;
+    background: #fbd4db73;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    height: 100vh;
+}
+.sidebar h2{
+    display: flex;
+    justify-content: center;
+    font-family: 'birthstone';
+    font-size: 55px;
+    font-weight: 500;
+    color: #573F53;
+}
+
+.sidebar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    font-family: 'albert sans';
+    transition: background-color 0.5s;
+}
+.sidebar i{
+    padding-right: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 500;
+
+}
+.main-content {
+    flex: 1;
+    padding: 10px;
+}
+.card {
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-family:'albert sans';
+    font-weight: 300;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+}
+
+.card h2{
+    font-weight: 400;
+    
+}
+
+.card2{
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family:'albert sans';
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+}
+
+.card2 h2{
+    text-indent: 10px;
+
+}
+
