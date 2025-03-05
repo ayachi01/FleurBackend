@@ -55,8 +55,8 @@ $conn->close();
     <h2>Fleur Haven</h2>
     <a href="home.html"><i class="fa-solid fa-house"></i> Home </a>
     <a href="orders.html"><i class="fa-solid fa-truck"></i> Orders</a>
-    <a href="inventory.html"><i class="fa-solid fa-warehouse"></i>Inventory</a>
-    <a href="customers.html"><i class="fa-solid fa-users"></i> Costumers</a>
+    <a href="inventory.php"><i class="fa-solid fa-warehouse"></i>Inventory</a>
+    <a href="customers.php"><i class="fa-solid fa-users"></i> Costumers</a>
     <a href="#"><i class="fa-solid fa-user"></i> Account</a>
 </div>
 
@@ -79,8 +79,10 @@ $conn->close();
         <?php foreach ($flowers as $flower): ?>
         <tr>
             <td><?php echo htmlspecialchars($flower['id']); ?></td>
-            <td><img src="<?php echo htmlspecialchars($flower['image_path']); ?>" alt="<?php echo htmlspecialchars($flower['name']); ?>"></td> 
+            <td><img src="<?php echo htmlspecialchars($flower['image_url']); ?>" alt="<?php echo htmlspecialchars($flower['name']); ?>"></td> 
             <td><?php echo htmlspecialchars($flower['name']); ?></td>
+            <td><?php echo htmlspecialchars($flower['stock']); ?></td>
+            <td><?php echo htmlspecialchars($flower['price']); ?></td>
 
         </tr>
         <?php endforeach; ?>

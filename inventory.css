@@ -28,7 +28,7 @@ body {
     background: #fbd4db73;
     color: rgb(0, 0, 0);
     padding: 15px;
-    height: 100vh;
+
 }
 .sidebar h2{
     display: flex;
@@ -113,3 +113,7 @@ th:hover{
     color: #092b74;
 }
 
+table img {
+    width: 100px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
