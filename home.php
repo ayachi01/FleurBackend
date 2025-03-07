@@ -1,3 +1,19 @@
+<?php
+// Database connection (make sure to include your connection code)
+require 'api/db.php'; // Adjust the path as necessary
+
+// Query to count total users
+$sql = "SELECT COUNT(*) as total FROM users";
+$result = $connection->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $totalUsers = $row['total'];
+} else {
+    $totalUsers = 0;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +32,13 @@
 </head>
 <body>
     <div class="sidebar">
-        <h2>Fleur Haven</h2>
-        <a href="home.html   "><i class="fa-solid fa-house"></i> Home </a>
+        <img src="assets/logo.png" alt="" class="signup-image">
+        <a href="home.php"><i class="fa-solid fa-house"></i> Home </a>
         <a href="orders.html"><i class="fa-solid fa-truck"></i> Orders</a>
-        <a href="inventory.php"><i class="fa-solid fa-warehouse"></i> Inventory</a>
+        <a href="inventory.php"><i class="fa-solid fa-warehouse"></i>Inventory</a>
         <a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a>
         <a href="account.html"><i class="fa-solid fa-user"></i> Account</a>
         <button class="logout-button" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
-        
     </div>
 
     <div class="main-content">
@@ -37,7 +52,7 @@
                 Total Sales: $0
             </div>
             <div class="total-users" id="totalUsers">
-                Total Users: 0
+                Total Users: <?php echo $totalUsers; ?>
             </div>
         </div>
 
@@ -57,21 +72,17 @@
             // Display total sales in the designated HTML element
             document.getElementById('totalSales').innerText = `Total Sales: $${totalSales}`;
 
-            // Example total users (you can replace this with actual data)
-            const totalUsers = 150; // Example user count
-            document.getElementById('totalUsers').innerText = `Total Users: ${totalUsers}`;
-
             const ctx = document.getElementById('myChart').getContext('2d');
             const myChart = new Chart(ctx, {
                 type: 'bar', // Type of chart (bar, line, pie, etc.)
                 data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'], // X-axis labels
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July '], // X-axis labels
                     datasets: [{
                         label: 'Sales',
                         data: salesData, // Use the sales data array
-                        backgroundColor: 'rgba(256, 212, 220, 1)', // Bar color
+                        backgroundColor: 'rgba(256, 212, 220, 0.2)', // Bar color
                         borderColor: 'rgba(256, 212, 220, 1)', // Border color
-                        borderWidth : 1
+                        borderWidth: 1
                     }]
                 },
                 options: {

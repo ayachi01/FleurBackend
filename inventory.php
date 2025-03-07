@@ -39,12 +39,13 @@ $connection->close();
 <body>
 
 <div class="sidebar">
-    <h2>Fleur Haven</h2>
-    <a href="home.html"><i class="fa-solid fa-house"></i> Home </a>
+    <img src="assets/logo.png" alt="" class="signup-image">
+    <a href="home.php"><i class="fa-solid fa-house"></i> Home </a>
     <a href="orders.html"><i class="fa-solid fa-truck"></i> Orders</a>
     <a href="inventory.php"><i class="fa-solid fa-warehouse"></i> Inventory</a>
     <a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a>
     <a href="account.html"><i class="fa-solid fa-user"></i> Account</a>
+    <button class="logout-button" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
 </div>
 
 <div class="main-content">
@@ -61,6 +62,8 @@ $connection->close();
                     <th>Name</th>
                     <th>Stock</th>
                     <th>Price</th>
+                    <th>Availability</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -71,6 +74,16 @@ $connection->close();
                     <td><?php echo htmlspecialchars($flower['name']); ?></td>
                     <td><?php echo htmlspecialchars($flower['stock']); ?></td>
                     <td>₱<?php echo number_format($flower['price'], 2); ?></td>
+                    <td>
+                        <?php 
+                        if ($flower['stock'] > 0) {
+                            echo "In Stock";
+                        } else {
+                            echo "Out of Stock";
+                        }
+                        ?>
+                    </td>
+                    <td><button class="edit"><i class="fa-solid fa-pen"></i>Edit</button></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

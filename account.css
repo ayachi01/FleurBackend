@@ -175,3 +175,30 @@ p {
     cursor: pointer; /* Pointer/hand icon */
     border-radius: 4px; /* Rounded corners */
 }
+
+
+.logout-button {
+    background-color: #f44336;
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin: 15px;
+    cursor: pointer; 
+    border-radius: 4px; 
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; 
+}
+
+.signup-image {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    margin-bottom: 20px; 
+    margin-top: 20px;
+}

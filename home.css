@@ -104,49 +104,58 @@ canvas {
 }
 
 #myChart {
-    max-width: 1000px; /* Set a maximum width */
-    height: 300px; /* Set a fixed height */
-    margin: auto; /* Center the chart */
+    max-width: 1000px; 
+    height: 300px; 
+    margin: auto; 
 }
 
 .total-boxes {
-    display: flex; /* Use flexbox to align items side by side */
-    justify-content: space-between; /* Space between the boxes */
-    margin-bottom: 20px; /* Space below the boxes */
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 20px; 
+    height: 100px;
 }
 
 .total-sales, .total-users {
-    background-color: #ffffff; /* Changed to white for better visibility */
-    padding: 25px; /* Increased padding for a larger box */
+    background-color: #ffffff; 
+    padding: 25px; 
     border-radius: 8px;
     text-align: center;
-    font-size: 30px; /* Increased font size for better visibility */
-    flex: 1; /* Allow boxes to grow equally */
-    margin-right: 10px; /* Space between boxes */
+    font-size: 30px; 
+    flex: 1;
+    margin-right: 10px; 
     display: flex;
     justify-content: center;
-    align-items: center; /* Center content vertically */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+    align-items: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .total-users {
-    margin-right: 0; /* Remove margin for the last box */
+    margin-right: 0; 
 }
 
 .logout-button {
-    background-color: #f44336; /* Red background */
-    border: none; /* Remove borders */
-    color: white; /* White text */
-    padding: 10px 20px; /* Some padding */
-    text-align: center; /* Centered text */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Make the button inline */
-    font-size: 16px; /* Increase font size */
-    margin: 20px 0; /* Some margin */
-    cursor: pointer; /* Pointer/hand icon */
-    border-radius: 4px; /* Rounded corners */
+    background-color: #f44336;
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin: 15px;
+    cursor: pointer; 
+    border-radius: 4px; 
 }
 
 .logout-button:hover {
-    background-color: #d32f2f; /* Darker red on hover */
+    background-color: #d32f2f; 
+}
+
+.signup-image {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    margin-bottom: 20px; 
+    margin-top: 20px;
 }

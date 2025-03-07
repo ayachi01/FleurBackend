@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (password_verify($password, $hashedPassword)) {
             $_SESSION['email'] = $email;
-            header("Location: ../home.html"); // Redirect after successful login
+            header("Location: ../home.php"); // Redirect after successful login
             exit();
         } else {
             $_SESSION['error'] = "Invalid password. Please try again.";

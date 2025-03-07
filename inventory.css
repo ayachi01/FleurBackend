@@ -69,7 +69,7 @@ body {
     margin-bottom: 20px;
     font-family:'albert sans';
     font-weight: 300;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .card h2{
@@ -83,7 +83,7 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     font-family:'albert sans';
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .card2 h2{
@@ -92,28 +92,70 @@ body {
 }
 
 table {
-    width: 100%; /* Make the table take the full width of its container */
-    border-collapse: collapse; /* Collapse borders for a cleaner look */
-    margin: 10px 0; /* Add margin for spacing */
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 10px 0; 
+    
     
 }
 
 th, td {
-    padding: 10px; /* Add padding for better spacing inside cells */
-    text-align: left; /* Align text to the left */
-    border: 1px solid #ddd; /* Add a light border for separation */
+    padding: 10px; 
+    text-align: left; 
+    border: 1px solid #ddd; 
 }
 
 th {
     transition: color 0.5 ease;
-    background-color: #f2f2f2; /* Light background for header */
-    font-weight: bold; /* Make header text bold */
+    background-color: #f2f2f2; 
+    font-weight: 500;
 }
 th:hover{
     color: #092b74;
 }
 
 table img {
-    width: 100px; /* Set the desired width */
-    height: auto; /* Maintain aspect ratio */
+    width: 100px;
+    height: auto; 
+}
+
+
+.logout-button {
+    background-color: #f44336;
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin: 15px;
+    cursor: pointer; 
+    border-radius: 4px; 
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; 
+}
+
+.signup-image {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    margin-bottom: 20px; 
+    margin-top: 20px;
+}
+
+.edit{
+    background-color: #dd827c;
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 0px;
+    cursor: pointer; 
+    border-radius: 4px; 
 }
