@@ -10,18 +10,19 @@ body {
     font-family: "Birthstone", serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
-  .albert-sans {
+.albert-sans {
     font-family: "Albert Sans", serif;
     font-optical-sizing: auto;
     font-style: normal;
-  }
-  .ephesis {
+}
+
+.ephesis {
     font-family: "Ephesis", serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
 .sidebar {
     width: 200px;
@@ -29,12 +30,12 @@ body {
     color: rgb(0, 0, 0);
     padding: 15px;
     height: 100vh;
-  
 }
-.sidebar h2{
+
+.sidebar h2 {
     display: flex;
     justify-content: center;
-    font-family: 'birthstone';
+    font-family: 'Birthstone', cursive !important;
     font-size: 55px;
     font-weight: 500;
     color: #573F53;
@@ -45,10 +46,11 @@ body {
     text-decoration: none;
     display: block;
     padding: 20px;
-    font-family: 'albert sans';
+    font-family: 'Albert Sans';
     transition: background-color 0.5s;
 }
-.sidebar i{
+
+.sidebar i {
     padding-right: 5px;
 }
 
@@ -57,12 +59,26 @@ body {
     border-radius: 10px;
     font-size: 17px;
     font-weight: 500;
-
 }
+
 .main-content {
     flex: 1;
     padding: 10px;
 }
+
+.card2 {
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: 'Albert Sans';
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card2 h2 {
+    text-indent: 10px;
+}
+
 .card {
     background: white;
     border-radius: 5px;
@@ -73,24 +89,53 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
 
-.card h2{
-    font-weight: 400;
-    
+
+/* Customer Box Layout */
+.customer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
-.card2{
+.customer-card {
     background: white;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-family:'albert sans';
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Albert Sans';
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card2 h2{
-    text-indent: 10px;
-
+.customer-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+.customer-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.customer-card p {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Ensure proper spacing inside boxes */
+.customer-card p strong {
+    font-weight: bold;
+    color: #000;
+}
+
 table {
     width: 100%; /* Make the table take the full width of its container */
     border-collapse: collapse; /* Collapse borders for a cleaner look */
@@ -117,4 +162,3 @@ table img {
     width: 100px; /* Set the desired width */
     height: auto; /* Maintain aspect ratio */
 }
-

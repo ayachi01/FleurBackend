@@ -28,6 +28,7 @@ body {
     background: #fbd4db73;
     color: rgb(0, 0, 0);
     padding: 15px;
+    height: 100vh;
    
 }
 .sidebar h2{
@@ -130,4 +131,22 @@ canvas {
 
 .total-users {
     margin-right: 0; /* Remove margin for the last box */
+}
+
+.logout-button {
+    background-color: #f44336; /* Red background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline */
+    font-size: 16px; /* Increase font size */
+    margin: 20px 0; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
 }
