@@ -90,11 +90,10 @@ body {
     text-indent: 10px;
 
 }
-
-.card2 h2 .home{
-    font-size: 20px;
-    color: #573F53;
+.card2 p{
+    text-indent: 10px;
 }
+
 
 
 canvas {

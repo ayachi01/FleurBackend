@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session
+
 // Database connection (make sure to include your connection code)
 require 'api/db.php'; // Adjust the path as necessary
 
@@ -11,6 +13,16 @@ if ($result->num_rows > 0) {
     $totalUsers = $row['total'];
 } else {
     $totalUsers = 0;
+}
+
+// Check if the user is logged in
+if (isset($_SESSION['email'])) {
+    // Echo user information
+    $welcomeMessage = "Welcome, " . htmlspecialchars($_SESSION['email']) . "!";
+    $userEmail = htmlspecialchars($_SESSION['email']);
+} else {
+    $welcomeMessage = "You are not logged in.";
+    $userEmail = "";
 }
 ?>
 
@@ -28,22 +40,23 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
-   
 </head>
 <body>
     <div class="sidebar">
         <img src="assets/logo.png" alt="" class="signup-image">
         <a href="home.php"><i class="fa-solid fa-house"></i> Home </a>
         <a href="orders.php"><i class="fa-solid fa-truck"></i> Orders</a>
-        <a href="inventory.php"><i class="fa-solid fa-warehouse"></i>Inventory</a>
+        <a href="inventory.php"><i class="fa-solid fa-warehouse"></i> Inventory</a>
         <a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a>
         <a href="account.html"><i class="fa-solid fa-user"></i> Account</a>
-        <button class="logout-button" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+        <button class="logout-button" onclick="confirmLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
     </div>
 
     <div class="main-content">
         <div class="card2">
-            <h2>Dashboard </h2> 
+            <h2>Dashboard</h2>
+            <p><?php echo $welcomeMessage; ?></p> <!-- Display welcome message -->
+    
         </div>
         
         <!-- Total Sales and Total Users Boxes -->
@@ -58,12 +71,17 @@ if ($result->num_rows > 0) {
 
         <div class="card">
             <h2>Statistics</h2>
-          
             <canvas id="myChart"></canvas>
         </div>
     </div>
 
     <script>
+        function confirmLogout() {
+            if (confirm("Are you sure you want to log out?")) {
+                window.location.href = 'logout.php'; // Redirect to logout page
+            }
+        }
+
         // Ensure the script runs after the DOM is fully loaded
         document.addEventListener('DOMContentLoaded', function() {
             const salesData = [65, 59, 80, 81, 56, 55, 40]; // Sales data
@@ -76,7 +94,7 @@ if ($result->num_rows > 0) {
             const myChart = new Chart(ctx, {
                 type: 'bar', // Type of chart (bar, line, pie, etc.)
                 data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July '], // X-axis labels
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'], // X-axis labels
                     datasets: [{
                         label: 'Sales',
                         data: salesData, // Use the sales data array
