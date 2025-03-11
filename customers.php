@@ -36,7 +36,7 @@ $connection->close();
     <div class="sidebar">
     <img src="assets/logo.png" alt="" class="signup-image">
         <a href="home.php"><i class="fa-solid fa-house"></i> Home </a>
-        <a href="orders.html"><i class="fa-solid fa-truck"></i> Orders</a>
+        <a href="orders.php"><i class="fa-solid fa-truck"></i> Orders</a>
         <a href="inventory.php"><i class="fa-solid fa-warehouse"></i>Inventory</a>
         <a href="customers.php"><i class="fa-solid fa-users"></i> Costumers</a>
         <a href="account.html"><i class="fa-solid fa-user"></i> Account</a>
@@ -55,17 +55,16 @@ $connection->close();
         <tr>
             <th>ID</th>
             <th>Email</th>
-            <th>Password</th>
+        
             <th>Address</th>
-            <th>Edit</th>
-       
+            
+
         </tr>
     </thead>
         <?php foreach ($users as $users): ?>
         <tr>
             <td><?php echo htmlspecialchars($users['id']); ?></td>
             <td><?php echo htmlspecialchars($users['email']); ?></td>
-            <td><?php echo htmlspecialchars($users['password']); ?></td>
             <td><?php echo htmlspecialchars($users['address']);?> </td>
 
         </tr>

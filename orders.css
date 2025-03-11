@@ -87,33 +87,32 @@ body {
 
 
 
-
 table {
-    width: 100%; /* Make the table take the full width of its container */
-    border-collapse: collapse; /* Collapse borders for a cleaner look */
-    margin: 10px 0; /* Add margin for spacing */
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 10px 0; 
+    
     
 }
 
 th, td {
-    padding: 10px; /* Add padding for better spacing inside cells */
-    text-align: left; /* Align text to the left */
-    border: 1px solid #ddd; /* Add a light border for separation */
+    padding: 10px; 
+    text-align: center; 
+    border: 1px solid #ddd; 
 }
 
 th {
     transition: color 0.5 ease;
-    background-color: #f2f2f2; /* Light background for header */
-    font-weight: bold; /* Make header text bold */
+    background-color: #f2f2f2; 
+    font-weight: 500;
 }
 th:hover{
     color: #092b74;
 }
-.order-history {
-    background-color: white;
-    border-radius: 10px;
 
-    overflow: auto; /* Ensure content is scrollable if it overflows */
+table img {
+    width: 100px;
+    height: auto; 
 }
 
 
