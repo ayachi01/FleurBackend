@@ -71,6 +71,7 @@ $connection->close();
                     <th>Flower Image</th> 
                     <th>Quantity</th>
                     <th>Date Added</th>
+                    <th>Order Status </th>
                 </tr>
             </thead>
             <tbody>
@@ -82,6 +83,7 @@ $connection->close();
                     <td><img src="<?php echo htmlspecialchars($item['flower_image_url']); ?>" alt="<?php echo htmlspecialchars($item['flower_name']); ?>" width="100"></td> <!-- Display flower image -->
                     <td><?php echo htmlspecialchars($item['quantity']); ?></td>
                     <td><?php echo htmlspecialchars($item['added_at']); ?></td>
+                    <td><button class="add_status"> Edit </button> </td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

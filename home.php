@@ -65,7 +65,7 @@ if (isset($_SESSION['email'])) {
                 Total Sales: $0
             </div>
             <div class="total-users" id="totalUsers">
-                Total Users: <?php echo $totalUsers; ?>
+                Total Customers: <?php echo $totalUsers; ?>
             </div>
         </div>
 
