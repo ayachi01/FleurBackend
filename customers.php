@@ -58,6 +58,7 @@ $connection->close();
             <th>Address</th>
             <th>Name </th>
             <th>Phone #</th>
+            <th>Action </th>
             
 
         </tr>
@@ -67,6 +68,11 @@ $connection->close();
             <td><?php echo htmlspecialchars($users['id']); ?></td>
             <td><?php echo htmlspecialchars($users['email']); ?></td>
             <td><?php echo htmlspecialchars($users['address']);?> </td>
+            <td>name </td>
+            <td>phone # </td>
+            <td>
+                            <a href="customer_order_history.php?user_id=<?php echo htmlspecialchars($user['id']); ?>">View Orders</a>
+                        </td>
 
         </tr>
         <?php endforeach; ?>
@@ -85,5 +91,4 @@ $connection->close();
     </script>
 </body>
 </html>
-
 

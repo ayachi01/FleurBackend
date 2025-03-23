@@ -15,7 +15,7 @@ if (isset($_GET['order'])) {
 }
 
 // Validate the order_by and order parameters to prevent SQL injection
-$valid_columns = ['cart.id', 'users.email', 'flowers.name', 'cart.quantity', 'cart.added_at', 'cart.status'];
+$valid_columns = ['cart.added_at', 'cart.status'];
 if (!in_array($order_by, $valid_columns)) {
     $order_by = 'cart.id'; // Fallback to default
 }
@@ -92,10 +92,6 @@ $connection->close();
             <form method="GET" action="">
                 <label for="sort_by">Sort By:</label>
                 <select name="sort_by" id="sort_by" onchange="this.form.submit()">
-                    <option value="cart.id" <?php echo ($order_by == 'cart.id') ? 'selected' : ''; ?>>ID</option>
-                    <option value="users.email" <?php echo ($order_by == 'users.email') ? 'selected' : ''; ?>>User  Email</option>
-                    <option value="flowers.name" <?php echo ($order_by == 'flowers.name ') ? 'selected' : ''; ?>>Flower</option>
-                    <option value="cart.quantity" <?php echo ($order_by == 'cart.quantity') ? 'selected' : ''; ?>>Quantity</option>
                     <option value="cart.added_at" <?php echo ($order_by == 'cart.added_at') ? 'selected' : ''; ?>>Date Added</option>
                     <option value="cart.status" <?php echo ($order_by == 'cart.status') ? 'selected' : ''; ?>>Status</option>
                 </select>

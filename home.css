@@ -10,18 +10,19 @@ body {
     font-family: "Birthstone", serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
-  .albert-sans {
+.albert-sans {
     font-family: "Albert Sans", serif;
     font-optical-sizing: auto;
     font-style: normal;
-  }
-  .ephesis {
+}
+
+.ephesis {
     font-family: "Ephesis", serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
 .sidebar {
     width: 200px;
@@ -29,9 +30,9 @@ body {
     color: rgb(0, 0, 0);
     padding: 15px;
     height: 100vh;
-   
 }
-.sidebar h2{
+
+.sidebar h2 {
     display: flex;
     justify-content: center;
     font-family: 'birthstone';
@@ -48,7 +49,8 @@ body {
     font-family: 'albert sans';
     transition: background-color 0.5s;
 }
-.sidebar i{
+
+.sidebar i {
     padding-right: 5px;
 }
 
@@ -57,55 +59,64 @@ body {
     border-radius: 10px;
     font-size: 17px;
     font-weight: 500;
-
 }
+
 .main-content {
     flex: 1;
     padding: 10px;
 }
+
 .card {
     background: white;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
-    font-family:'albert sans';
+    font-family: 'albert sans';
     font-weight: 300;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
 
-.card h2{
+.card h2 {
     font-weight: 400;
 }
 
-.card2{
+.card2 {
     background: white;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
-    font-family:'albert sans';
+    font-family: 'albert sans';
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
 
-.card2 h2{
-    text-indent: 10px;
-
-}
-.card2 p{
+.card2 h2 {
     text-indent: 10px;
 }
 
-
+.card2 p {
+    text-indent: 10px;
+}
 
 canvas {
-    width: 100% !important; /* Make the canvas responsive */
-    height: auto !important; /* Maintain aspect ratio */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+    width: 100% !important; 
+    height: auto !important; 
 }
 
 #myChart {
     max-width: 1000px; 
     height: 300px; 
     margin: auto; 
+}
+
+.pie-chart-container {
+    width: 250px;  /* Control the size */
+    height: 250px; /* Control the size */
+    margin: auto;  /* Center the chart */
+}
+
+#pieChart {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .total-boxes {
@@ -115,14 +126,14 @@ canvas {
     height: 100px;
 }
 
-.total-sales, .total-users {
+.total-sales, .total-users, .total-orders {
     background-color: #ffffff; 
     padding: 25px; 
     border-radius: 8px;
     text-align: center;
     font-size: 30px; 
     flex: 1;
-    margin-right: 10px; 
+    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -158,3 +169,15 @@ canvas {
     margin-bottom: 20px; 
     margin-top: 20px;
 }
+
+.statistics-container {
+    display: flex; /* Use flexbox to align items side by side */
+    justify-content: space-between; /* Space between the items */
+    margin-top: 20px; /* Add some margin on top */
+}
+
+.chart-container {
+    flex: 1; 
+    margin: 0 10px; 
+}
+
