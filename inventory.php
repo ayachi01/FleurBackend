@@ -73,7 +73,7 @@ $connection->close();
     <a href="inventory.php"><i class="fa-solid fa-warehouse"></i> Inventory</a>
     <a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a>
     <a href="account.html"><i class="fa-solid fa-user"></i> Account</a>
-    <button class="logout-button" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+    <button class="logout-button" onclick="confirmLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
 </div>
 
 <div class="main-content">
@@ -150,9 +150,12 @@ function closeEditModal() {
     document.getElementById('editModal').style.display = 'none';
 }
 
-function logout() {
-    // Implement logout functionality
-}
+function confirmLogout() {
+            if (confirm("Are you sure you want to log out?")) {
+                window.location.href = 'logout.php'; // Redirect to logout page
+            }
+        }
+
 </script>
 
 </body>
