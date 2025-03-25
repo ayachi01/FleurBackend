@@ -48,7 +48,6 @@ if (isset($_SESSION['email'])) {
         <a href="orders.php"><i class="fa-solid fa-truck"></i> Orders</a>
         <a href="inventory.php"><i class="fa-solid fa-warehouse"></i> Inventory</a>
         <a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a>
-        <a href="account.html"><i class="fa-solid fa-user"></i> Account</a>
         <button class="logout-button" onclick="confirmLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
     </div>
 
@@ -56,7 +55,6 @@ if (isset($_SESSION['email'])) {
         <div class="card2">
             <h2>Dashboard</h2>
             <p><?php echo $welcomeMessage; ?></p> <!-- Display welcome message -->
-    
         </div>
         
         <!-- Total Sales and Total Users Boxes -->
@@ -67,22 +65,29 @@ if (isset($_SESSION['email'])) {
             <div class="total-users" id="totalUsers">
                 Total Customers: <?php echo $totalUsers; ?>
             </div>
+            <div class="total-orders" id="totalOrders">
+                Total Orders: <?php echo $totalUsers; ?>
+            </div>
         </div>
 
-        <div class="card">
-            <h2>Statistics</h2>
-            <canvas id="myChart"></canvas>
+        <div class="statistics-container">
+            <div class="chart-container">
+                <div class="card">
+                    <h2>Sales Chart</h2>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="card">
+                    <h2>Overall Statistics</h2>
+                    <div class="pie-chart-container">
+                        <canvas id="pieChart" width="250" height="250"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <script>
-        function confirmLogout() {
-            if (confirm("Are you sure you want to log out?")) {
-                window.location.href = 'logout.php'; // Redirect to logout page
-            }
-        }
-
-        // Ensure the script runs after the DOM is fully loaded
+        <script>
         document.addEventListener('DOMContentLoaded', function() {
             const salesData = [65, 59, 80, 81, 56, 55, 40]; // Sales data
             const totalSales = salesData.reduce((acc, curr) => acc + curr, 0); // Calculate total sales
@@ -90,28 +95,49 @@ if (isset($_SESSION['email'])) {
             // Display total sales in the designated HTML element
             document.getElementById('totalSales').innerText = `Total Sales: $${totalSales}`;
 
-            const ctx = document.getElementById('myChart').getContext('2d');
-            const myChart = new Chart(ctx, {
-                type: 'bar', // Type of chart (bar, line, pie, etc.)
+            const ctxBar = document.getElementById('myChart').getContext('2d');
+            new Chart(ctxBar, {
+                type: 'bar', 
                 data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'], // X-axis labels
+                    labels: ['Assorted Flowers', 'Orchids', 'Carnation', 'Daisy Kiss', 'Dangwa', 'Eternal', 'Everyday', 'Just Because', 'Lilies', 'Pixie Posy', 'True Love', 'Valentine', 'White Daisies', 'White Roses', 'White Tulips'], 
                     datasets: [{
                         label: 'Sales',
-                        data: salesData, // Use the sales data array
-                        backgroundColor: 'rgba(256, 212, 220, 0.2)', // Bar color
-                        borderColor: 'rgba(256, 212, 220, 1)', // Border color
+                        data: salesData,
+                        backgroundColor: 'rgba(256, 212, 220, 0.2)',
+                        borderColor: 'rgba(256, 212, 220, 1)',
                         borderWidth: 1
                     }]
                 },
                 options: {
                     scales: {
-                        y: {
-                            beginAtZero: true // Start Y-axis at zero
-                        }
+                        y: { beginAtZero: true }
                     }
                 }
             });
+
+            const totalUsers = <?php echo $totalUsers; ?>;
+            const totalOrders = <?php echo $totalUsers; ?>; // Placeholder, update if necessary
+            
+            const ctxPie = document.getElementById('pieChart').getContext('2d');
+            new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                    labels: ['Total Sales', 'Total Users', 'Total Orders'],
+                    datasets: [{
+                        data: [totalSales, totalUsers, totalOrders],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'left', // Position the legend on the left
+                        }
+                    }
+                }
+            });    
         });
-    </script>
+        </script>
+    </div>
 </body>
 </html>

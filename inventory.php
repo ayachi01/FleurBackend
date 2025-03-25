@@ -9,7 +9,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id']))
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $stmt->close();
-    header("Location: inventory.php"); // Redirect to the inventory page
+    header("Location: inventory.php");
     exit();
 }
 
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['edit'])) {
     $stmt->bind_param("sdii", $name, $price, $stock, $id);
     $stmt->execute();
     $stmt->close();
-    header("Location: inventory.php"); // Redirect to the inventory page
+    header("Location: inventory.php"); 
     exit();
 }
 
