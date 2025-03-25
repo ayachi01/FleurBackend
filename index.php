@@ -41,7 +41,7 @@ unset($_SESSION['error']); // Clear error message after displaying it
                         </label>
                     </div>
                     <button type="submit" class="submit-btn">Sign In</button>   
-                    <a href="forgotpass.php" class="forgotpass">Forgot Password?</a>
+                    <a href="forgotpass.php">Forgot Password?</a>
                 </form>
             </div>
         </div>

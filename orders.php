@@ -1,11 +1,11 @@
 <?php
 require 'api/db.php'; // Include database connection
 
-// Default sorting parameters
-$order_by = 'cart.id'; // Default sort by ID
-$order = 'ASC'; // Default order
 
-// Check if sorting parameters are set in the URL
+$order_by = 'cart.id'; 
+$order = 'ASC'; 
+
+
 if (isset($_GET['sort_by'])) {
     $order_by = $_GET['sort_by'];
 }
@@ -14,18 +14,18 @@ if (isset($_GET['order'])) {
     $order = $_GET['order'];
 }
 
-// Validate the order_by and order parameters to prevent SQL injection
+
 $valid_columns = ['cart.added_at', 'cart.status'];
 if (!in_array($order_by, $valid_columns)) {
-    $order_by = 'cart.id'; // Fallback to default
+    $order_by = 'cart.id'; 
 }
 
 $valid_orders = ['ASC', 'DESC'];
 if (!in_array($order, $valid_orders)) {
-    $order = 'ASC'; // Fallback to default
+    $order = 'ASC'; 
 }
 
-// SQL query to fetch specific fields from the cart, flowers, and users tables
+
 $sql = "SELECT cart.id, 
                users.email AS user_email, 
                cart.flower_id, 
@@ -138,7 +138,7 @@ $connection->close();
 <div id="editModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeEditModal()">&times;</span>
-        <h2>Edit Order Status</h2>
+        <h2 >Edit Order Status</h2>
         <form id="editForm" method="POST" action="update_order_status.php">
             <input type="hidden" name="order_id" id="order_id">
             <label for="status">Status:</label>
@@ -149,7 +149,7 @@ $connection->close();
                 <option value="Cancelled">Cancelled</option>
                 
             </select>
-            <button type="submit">Update Status</button>
+            <button type="submit" class="submitbutton">Update Status</button>
         </form>
     </div>
 </div>
