@@ -39,7 +39,6 @@ $connection->close();
         <a href="orders.php"><i class="fa-solid fa-truck"></i> Orders</a>
         <a href="inventory.php"><i class="fa-solid fa-warehouse"></i>Inventory</a>
         <a href="customers.php"><i class="fa-solid fa-users"></i> Costumers</a>
-        <a href="account.html"><i class="fa-solid fa-user"></i> Account</a>
         <button class="logout-button" onclick="confirmLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
         
     </div>
@@ -73,7 +72,7 @@ $connection->close();
             <td><?php echo htmlspecialchars($users['last_name']);?> </td>
             <td><?php echo htmlspecialchars($users['phone_number']);?> </td>
             <td>
-                            <a href="customer_order_history.php?user_id=<?php echo htmlspecialchars($user['id']); ?>">View Orders</a>
+                <a href="customer_order_history.php?user_id=<?php echo htmlspecialchars($user['id']); ?>">View Orders</a>
                         </td>
 
         </tr>
