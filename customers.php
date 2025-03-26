@@ -39,6 +39,7 @@ $connection->close();
         <a href="orders.php"><i class="fa-solid fa-truck"></i> Orders</a>
         <a href="inventory.php"><i class="fa-solid fa-warehouse"></i>Inventory</a>
         <a href="customers.php"><i class="fa-solid fa-users"></i> Costumers</a>
+        <a href="account.html"><i class="fa-solid fa-user"></i> Account</a>
         <button class="logout-button" onclick="confirmLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
         
     </div>
@@ -81,15 +82,13 @@ $connection->close();
     </div>
 
       
-    
-    <script>
-        function confirmLogout() {
+<script>
+    function confirmLogout() {
             if (confirm("Are you sure you want to log out?")) {
                 window.location.href = 'logout.php'; // Redirect to logout page
             }
         }
-
-    </script>
+</script>
 </body>
 </html>
 
