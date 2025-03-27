@@ -5,14 +5,51 @@ session_start(); // Start the session
 require 'api/db.php'; // Adjust the path as necessary
 
 // Query to count total users
-$sql = "SELECT COUNT(*) as total FROM users";
-$result = $connection->query($sql);
+$sqlUsers = "SELECT COUNT(*) as total FROM users";
+$resultUsers = $connection->query($sqlUsers);
 
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
+if ($resultUsers->num_rows > 0) {
+    $row = $resultUsers->fetch_assoc();
     $totalUsers = $row['total'];
 } else {
     $totalUsers = 0;
+}
+
+// Query to get total quantities sold for each flower
+$sqlFlowers = "SELECT 
+    flowers.name, 
+    COALESCE(SUM(order_items.quantity), 0) AS total_quantity
+FROM 
+    flowers
+LEFT JOIN 
+    order_items ON order_items.flower_id = flowers.id
+GROUP BY 
+    flowers.name;";
+$resultFlowers = $connection->query($sqlFlowers);
+
+$flowerNames = [];
+$salesData = [];
+$totalSales = 0;
+
+if ($resultFlowers->num_rows > 0) {
+    while ($row = $resultFlowers->fetch_assoc()) {
+        $flowerNames[] = $row['name'];
+        $salesData[] = $row['total_quantity'];
+        $totalSales += $row['total_quantity'] ; 
+    }
+} else {
+    $flowerNames = ['No Data'];
+    $salesData = [0];
+}
+
+// Query to get total orders (replace this with the correct query)
+$sqlOrders = "SELECT COUNT(*) as total_orders FROM orders";
+$resultOrders = $connection->query($sqlOrders);
+if ($resultOrders->num_rows > 0) {
+    $row = $resultOrders->fetch_assoc();
+    $totalOrders = $row['total_orders'];
+} else {
+    $totalOrders = 0;
 }
 
 // Check if the user is logged in
@@ -60,13 +97,13 @@ if (isset($_SESSION['email'])) {
         <!-- Total Sales and Total Users Boxes -->
         <div class="total-boxes">
             <div class="total-sales" id="totalSales">
-                Total Sales: $0
+                Total Sales: $<?php echo number_format($totalSales, 2); ?>
             </div>
             <div class="total-users" id="totalUsers">
                 Total Customers: <?php echo $totalUsers; ?>
             </div>
             <div class="total-orders" id="totalOrders">
-                Total Orders: <?php echo $totalUsers; ?>
+                Total Orders: <?php echo $totalOrders; ?>
             </div>
         </div>
 
@@ -89,20 +126,21 @@ if (isset($_SESSION['email'])) {
 
         <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const salesData = [65, 59, 80, 81, 56, 55, 40]; // Sales data
-            const totalSales = salesData.reduce((acc, curr) => acc + curr, 0); // Calculate total sales
+            const salesData = <?php echo json_encode($salesData); ?>; // Sales data from PHP
+            const flowerNames = <?php echo json_encode($flowerNames); ?>; // Flower names from PHP
+            const totalSales = <?php echo $totalSales; ?>; // Total sales from PHP
 
             // Display total sales in the designated HTML element
-            document.getElementById('totalSales').innerText = `Total Sales: $${totalSales}`;
+            document.getElementById('totalSales').innerText = `Total Sales: $${totalSales.toFixed(2)}`;
 
             const ctxBar = document.getElementById('myChart').getContext('2d');
             new Chart(ctxBar, {
                 type: 'bar', 
                 data: {
-                    labels: ['Assorted Flowers', 'Orchids', 'Carnation', 'Daisy Kiss', 'Dangwa', 'Eternal', 'Everyday', 'Just Because', 'Lilies', 'Pixie Posy', 'True Love', 'Valentine', 'White Daisies', 'White Roses', 'White Tulips'], 
+                    labels: flowerNames, // Use flower names as labels
                     datasets: [{
-                        label: 'Sales',
-                        data: salesData,
+                        label: 'Quantity Sold',
+                        data: salesData, // Use sales data
                         backgroundColor: 'rgba(256, 212, 220, 0.2)',
                         borderColor: 'rgba(256, 212, 220, 1)',
                         borderWidth: 1
@@ -116,7 +154,7 @@ if (isset($_SESSION['email'])) {
             });
 
             const totalUsers = <?php echo $totalUsers; ?>;
-            const totalOrders = <?php echo $totalUsers; ?>; // Placeholder, update if necessary
+            const totalOrders = <?php echo $totalOrders; ?>; // Placeholder, update if necessary
             
             const ctxPie = document.getElementById('pieChart').getContext('2d');
             new Chart(ctxPie, {
