@@ -12,10 +12,6 @@ unset($_SESSION['error']); // Clear error message after displaying it
     <title>Login</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-</head>
-
-
 </head>
 
 <body>
@@ -36,15 +32,33 @@ unset($_SESSION['error']); // Clear error message after displaying it
                     <label for="password">Password</label>
                     <div class="password-container">
                         <input type="password" id="password" name="password" placeholder="Password123" required>
-                        <label for="show_password" class="toggle-password">
-                            <i class="fas <?php echo $showPassword ? 'fa-eye-slash' : 'fa-eye'; ?>"></i>
-                        </label>
+                        <span class="toggle-password">
+                            <i class="fas fa-eye" id="eye-icon"></i>
+                        </span>
                     </div>
+                    <a href="forgotpass.php" class="forgotpass">Forgot Password?</a>
                     <button type="submit" class="submit-btn">Sign In</button>   
-                    <a href="forgotpass.php">Forgot Password?</a>
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- JavaScript to toggle password visibility -->
+    <script>
+        const eyeIcon = document.getElementById('eye-icon');
+        const passwordField = document.getElementById('password');
+
+        eyeIcon.addEventListener('click', function() {
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        });
+    </script>
 </body>
 </html>

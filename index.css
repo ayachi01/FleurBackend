@@ -117,7 +117,7 @@ body {
 .error {
     background-color: #F8D7DA;
     color: #721C24;
-    padding: 10px;
+    padding: 10px; 
     border-radius: 5px;
     margin-top: 10px;
 }
@@ -125,51 +125,62 @@ body {
 /* Password container styles */
 .password-container {
     position: relative;
-    width: 100%;  /* Full width */
+    width: 100%;
     margin-bottom: 15px;
 }
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+
+/* Input field styling */
+.password-container input {
+    padding: 12px 40px 12px 12px; 
+    font-size: 16px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    width: 100%; 
+    box-sizing: border-box; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Toggle visibility icon (eye icon) */
 .password-container .toggle-password {
     position: absolute;
-    right: 10px; 
-    top: 50%;
+    right: 12px;
+    top: 50%; 
     transform: translateY(-50%);  
-    font-size: 20px; 
-    color: #aaa; 
     cursor: pointer;
-    transition: color 0.3s ease; 
-    pointer-events: auto; 
+    color: #aaa;
+    font-size: 10px;
 }
+
+/* Focus style for the input field */
 .password-container input:focus {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.password-container input[type="password"]:not(:focus) {
+/* Input field for password */
+input[type="password"] {
+    width: 100%;
+    padding: 12px 40px 12px 12px; 
+    font-size: 16px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s ease;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-input[type="password"] {
-    width: 100%; 
-    padding: 10px 40px 10px 10px; 
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;  
-    transition: border-color 0.3s ease; 
+.forgotpass {
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: right;
+    align-self: flex-end;
 }
 
-.forgotpass {
-    position: absolute;
-    right: 0; 
-    font-size: 14px; 
+/* Placeholder styles */
+.formLogin input::placeholder {
+    color: #999;
+    font-style: italic;
 }
+
 /* Focus styles for input fields */
 .formLogin input[type="email"]:focus,
 .formLogin input[type="password"]:focus {
